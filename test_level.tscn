@@ -1,3 +1,22 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://test_level.gd" type="Script" id=3]
+
+[node name="TestLevel" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 600 )
+collision_layer = 1024
+collision_mask = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 24, -136, 200, -184, 312, -136, 344, -80, 432, -56, 584, -72, 616, -144, 640, -208, 704, -232, 816, -224, 896, -128, 1024, -88, 1024, -408, 1088, -408, 1088, 40, -64, 40, -64, -216, 0, -216, 0, -136 )
+
+[node name="CollisionPolygon2D2" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0.0588235, 0.145098, 0.0862745, 1 )
+polygon = PoolVector2Array( 24, -136, 200, -184, 312, -136, 344, -80, 432, -56, 584, -72, 616, -144, 640, -208, 704, -232, 816, -224, 896, -128, 1024, -88, 1024, -408, 1088, -408, 1088, 40, -64, 40, -64, -216, 0, -216, 0, -136 )
+
+[node name="Player" parent="StaticBody2D" instance=ExtResource( 2 )]
+position = Vector2( 688, -280 )
