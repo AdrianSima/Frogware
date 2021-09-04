@@ -1,28 +1,30 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Environment/Lily.png" type="Texture" id=1]
-[ext_resource path="res://Environment/AnimationPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Environment/Platform_Lily.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 39.9414, 10 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "platform_move"
-length = 2.0
+length = 3.0
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("KinematicBody2D:position")
+tracks/0/path = NodePath("../Platform_Lily/KinematicBody2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.75, 1.5, 2.25, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 20, 5 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 
 [node name="Platform_Lily" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 motion/sync_to_physics = true
@@ -31,10 +33,13 @@ motion/sync_to_physics = true
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 0, 0.420456 )
 scale = Vector2( 0.533829, 0.643935 )
 texture = ExtResource( 1 )
 
 [node name="PlatformMovement" type="AnimationPlayer" parent="."]
+autoplay = "platform_move"
 playback_process_mode = 0
 anims/platform_move = SubResource( 2 )
-script = ExtResource( 2 )
+
+[connection signal="animation_finished" from="PlatformMovement" to="." method="_on_PlatformMovement_animation_finished"]
