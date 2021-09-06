@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Frogware"
-run/main_scene="res://test_level.tscn"
+run/main_scene="res://Environment/Test.tscn"
 config/icon="res://icon.png"
 
 [autoload]

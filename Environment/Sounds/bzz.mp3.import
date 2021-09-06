@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bzz.mp3-0d8d3f1c11e0c7b413c27b16cf0ed68d.mp3str"
+
+[deps]
+
+source_file="res://Environment/Sounds/bzz.mp3"
+dest_files=[ "res://.import/bzz.mp3-0d8d3f1c11e0c7b413c27b16cf0ed68d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

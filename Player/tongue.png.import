@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lily.png-bc2430c7d6a3614f3dff889241668c15.stex"
+path="res://.import/tongue.png-67f34a67207d444701fb760d6e961a8b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Lily.png"
-dest_files=[ "res://.import/Lily.png-bc2430c7d6a3614f3dff889241668c15.stex" ]
+source_file="res://Player/tongue.png"
+dest_files=[ "res://.import/tongue.png-67f34a67207d444701fb760d6e961a8b.stex" ]
 
 [params]
 
